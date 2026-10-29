@@ -1,0 +1,239 @@
+/* Motion layer — loaded on every page after site.css.
+   Rules that hide or offset content are scoped to html.motion, which motion.js sets
+   only when JavaScript runs and the visitor hasn't asked for reduced motion. */
+
+@property --spin { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+
+/* ---------- Lenis smooth scroll ---------- */
+html.lenis, html.lenis body { height: auto; }
+html.lenis, .lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ---------- Loader (home): covers the page until the intro animation is ready ---------- */
+/* Keep the scrollbar's space reserved while scrolling is locked, so the page never changes
+   width when the loader lifts (a width change would leave the pinned intro too wide). */
+html { scrollbar-gutter: stable; }
+.loader { display: none; }
+html.is-loading, html.is-loading body { overflow: hidden; }
+html.is-loading .loader, html.is-loaded .loader {
+  position: fixed; inset: 0; z-index: 200;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px;
+  background-color: var(--night);
+  background-image: repeating-linear-gradient(to bottom, transparent 0 79px, rgba(167, 182, 201, 0.07) 79px 80px);
+}
+html.is-loaded .loader { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .7s ease, visibility 0s linear .7s; }
+.loader-mark { width: min(240px, 56vw); height: auto; overflow: visible; }
+.loader-mark .e { fill: none; stroke: #3a6596; stroke-width: 9; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1;
+  animation: loader-draw 2s cubic-bezier(.6, 0, .3, 1) infinite alternate; animation-delay: calc(var(--d) * 45ms); }
+.loader-mark .e.g { stroke: var(--gold-hi); }
+.loader-mark .n { fill: #5b86b8; transform-box: fill-box; transform-origin: center; transform: scale(0);
+  animation: loader-pop 2s cubic-bezier(.3, 1.4, .5, 1) infinite alternate; animation-delay: calc(var(--d) * 45ms + 120ms); }
+.loader-mark .n.g { fill: var(--gold-hi); }
+@keyframes loader-draw { 0%, 12% { stroke-dashoffset: 1; } 70%, 100% { stroke-dashoffset: 0; } }
+@keyframes loader-pop { 0%, 18% { transform: scale(0); } 60%, 100% { transform: scale(1); } }
+.loader-bar { width: min(240px, 56vw); height: 2px; border-radius: 2px; background: rgba(167, 182, 201, 0.2); overflow: hidden; }
+.loader-bar span { display: block; height: 100%; background: linear-gradient(to right, var(--gold), var(--gold-hi));
+  transform-origin: 0 50%; transform: scaleX(var(--load, 0)); transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+.loader-name { margin: 0; font: 500 .9375rem var(--display); color: var(--on-dark-muted); text-align: center; padding: 0 var(--gutter); }
+
+/* ---------- Header: dark over the page head, light once scrolled past ---------- */
+.site-header { transition: box-shadow .35s ease; }
+.brand .on-dark { display: none; }
+.site-header.is-dark { background: var(--night); border-bottom-color: rgba(167, 182, 201, 0.14); backdrop-filter: none; }
+.site-header.is-dark .brand .on-dark { display: block; }
+.site-header.is-dark .brand .on-light { display: none; }
+.site-header.is-dark .brand .bar { background: rgba(167, 182, 201, 0.3); }
+.site-header.is-dark .nav-toggle { color: var(--white); border-color: rgba(167, 182, 201, 0.35); }
+@media (min-width: 1021px) {
+  .site-header.is-dark .nav a { color: var(--on-dark-muted); }
+  .site-header.is-dark .nav a:hover { color: var(--white); box-shadow: inset 0 -2px 0 rgba(167, 182, 201, 0.35); }
+  .site-header.is-dark .nav a[aria-current="page"] { color: var(--white); box-shadow: inset 0 -2px 0 var(--gold-hi); }
+}
+.site-header.is-raised { box-shadow: 0 8px 24px -16px rgba(10, 30, 55, 0.35); }
+.scroll-progress {
+  position: absolute; left: 0; right: 0; bottom: -1px; height: 2px;
+  background: linear-gradient(to right, var(--gold), var(--gold-hi));
+  transform-origin: 0 50%; transform: scaleX(0); pointer-events: none;
+}
+
+/* ---------- Cinematic intro (home) ---------- */
+.intro { padding: 0; }
+.intro-stage { position: relative; min-height: calc(100svh - 76px); display: flex; align-items: center; overflow: hidden; }
+/* While pinned the stage is exactly one screen tall; type scales with height as well as
+   width so the copy, buttons and chapter row stay in view on short laptop screens. */
+.intro.is-pinned .intro-stage { height: calc(100svh - 76px); min-height: 0; }
+.intro .wrap.intro-copy { padding-top: clamp(20px, 4svh, 48px); padding-bottom: clamp(76px, 12svh, 112px); width: 100%; }
+.intro .hero-org { margin-bottom: clamp(16px, 3.5svh, 40px); }
+.intro .hero-org p { font-size: .9375rem; }
+.intro h1 { font-size: clamp(2.5rem, min(7.2vw, 10svh), 6.25rem); }
+.intro .sub { max-width: 38ch; font-size: clamp(1.05rem, min(1.9vw, 2.9svh), 1.4rem); margin: clamp(16px, 3svh, 28px) 0 clamp(20px, 3.5svh, 32px); }
+/* Short windows (set by hero3d.js when the pinned intro wouldn't fit): drop the Centre-name
+   line, which the header already shows, then the tagline. */
+.intro.is-compact .hero-org { display: none; }
+.intro.is-compact .wrap.intro-copy { padding-top: 12px; }
+.intro.is-compact .chapters span { display: none; }
+.intro.is-tight .sub { display: none; }
+.intro.is-tight h1 { margin-bottom: clamp(16px, 3svh, 28px); }
+.intro-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 1.2s ease; }
+.intro.has-gl .intro-canvas { opacity: 1; }
+.intro.has-gl .graph { display: none; }
+/* soft vignette so the copy always sits on calm ground */
+.intro-stage::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(10, 30, 55, 0.85) 0%, rgba(10, 30, 55, 0.35) 42%, transparent 70%),
+              linear-gradient(0deg, rgba(10, 30, 55, 0.7) 0%, transparent 28%);
+}
+.intro-copy { position: relative; z-index: 2; }
+
+/* chapter row: one bar per chapter fills as the intro plays */
+.chapters {
+  position: absolute; z-index: 3; bottom: clamp(18px, 3.5svh, 36px);
+  right: max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter)));
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 176px); gap: 20px;
+  font-family: var(--display);
+}
+.chapters li { position: relative; padding-top: 12px; color: var(--on-dark-muted); opacity: .6; transition: opacity .5s ease, color .5s ease; }
+.chapters li::before, .chapters li::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; border-radius: 2px; }
+.chapters li::before { background: rgba(167, 182, 201, 0.25); }
+.chapters li::after { background: var(--gold-hi); transform-origin: 0 50%; transform: scaleX(var(--fill, 0)); }
+.chapters strong { display: block; font-size: 1rem; font-weight: 650; color: inherit; }
+.chapters span { display: block; font-size: .8125rem; line-height: 1.35; margin-top: 2px; }
+.chapters li.is-active { opacity: 1; color: var(--white); }
+.chapters li.is-active span { color: var(--gold-hi); }
+
+.intro-cue {
+  position: absolute; z-index: 3; bottom: clamp(18px, 3.5svh, 36px);
+  left: max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter)));
+  display: flex; align-items: center; gap: 10px;
+  font: 500 .875rem var(--display); color: var(--on-dark-muted);
+}
+.intro-cue .mouse { width: 18px; height: 28px; border: 1.5px solid currentColor; border-radius: 10px; position: relative; }
+.intro-cue .mouse::after { content: ""; position: absolute; left: 50%; top: 6px; width: 2px; height: 6px; margin-left: -1px; border-radius: 2px; background: var(--gold-hi); animation: cue 1.8s ease-in-out infinite; }
+@keyframes cue { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(9px); opacity: 0; } 100% { opacity: 0; } }
+.skip-intro {
+  margin-left: 10px; padding: 4px 0; background: none; border: 0; border-bottom: 1px solid rgba(232, 198, 92, 0.6);
+  font: inherit; color: var(--on-dark); cursor: pointer;
+}
+.skip-intro:hover { color: var(--gold-hi); border-bottom-color: var(--gold-hi); }
+.intro:not(.is-pinned) .intro-cue { display: none; }
+
+@media (max-width: 1000px) {
+  .chapters { grid-template-columns: repeat(3, 128px); gap: 16px; }
+  .chapters span { display: none; }
+}
+@media (max-width: 760px) {
+  .intro-stage { align-items: flex-end; }
+  .intro-stage::after { background: linear-gradient(0deg, rgba(10, 30, 55, 0.94) 0%, rgba(10, 30, 55, 0.78) 48%, rgba(10, 30, 55, 0.15) 74%, transparent 86%); }
+  .chapters { left: var(--gutter); right: var(--gutter); grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; bottom: 22px; }
+  .chapters strong { font-size: .875rem; }
+  .intro .wrap.intro-copy { padding-bottom: 88px; }
+  .intro-cue { display: none; }
+}
+
+/* Without the particle intro (reduced motion, no WebGL) the chapters read as the motto */
+.intro.no-gl .chapters {
+  left: max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter))); right: auto; bottom: clamp(40px, 5vw, 56px);
+  display: flex; flex-wrap: wrap; gap: 0 .45em;
+}
+.intro.no-gl .chapters li { opacity: 1; color: var(--gold-hi); padding: 0; transition: none; }
+.intro.no-gl .chapters strong { font-weight: 500; font-size: 1rem; }
+.intro.no-gl .chapters li::before, .intro.no-gl .chapters li::after, .intro.no-gl .chapters span, .intro.no-gl .intro-cue { display: none; }
+
+/* ---------- Numbers ---------- */
+.stats-band { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.stats { list-style: none; margin: 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.stats li { padding: 44px 24px 40px 0; display: flex; flex-direction: column; gap: 10px; }
+.stats li + li { padding-left: 32px; border-left: 1px solid var(--rule); }
+.stats .num { font: 850 clamp(3rem, 6vw, 4.75rem)/0.9 var(--display); font-variation-settings: "wdth" 118; color: var(--ink); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.stats .lbl { font-size: 1rem; color: var(--muted); line-height: 1.4; max-width: 22ch; }
+.stats .lbl::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-right: 10px; vertical-align: .1em; }
+@media (max-width: 860px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .stats li:nth-child(n+3) { border-top: 1px solid var(--rule); }
+}
+
+/* ---------- Split headings ---------- */
+.split-mask { overflow: clip; padding-bottom: .08em; margin-bottom: -.08em; }
+
+/* vision statement: words light up as it scrolls past */
+.statement .w { display: inline; }
+
+/* ---------- Hover highlight that glides between items ---------- */
+.rows, .index { position: relative; }
+.hl {
+  position: absolute; left: 0; top: 0; z-index: 0; pointer-events: none;
+  border-radius: 10px; background: rgba(18, 52, 94, 0.055);
+  box-shadow: inset 0 0 0 1px rgba(18, 52, 94, 0.06);
+  opacity: 0; transition: opacity .25s ease;
+}
+.hl.on { opacity: 1; }
+.rows > *, .index a { position: relative; z-index: 1; }
+.index a { transition: padding .35s cubic-bezier(.2, .7, .2, 1); }
+@media (hover: hover) and (pointer: fine) {
+  .index a:hover { padding-left: 14px; }
+}
+
+/* ---------- Portrait tilt ---------- */
+.person { perspective: 900px; }
+.person img { transform-origin: 50% 60%; will-change: transform; transition: box-shadow .4s ease; }
+.person:hover img { box-shadow: 0 22px 40px -22px rgba(10, 30, 55, 0.55); }
+
+/* ---------- Buttons ---------- */
+.btn { position: relative; isolation: isolate; overflow: hidden; }
+.btn--gold::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.65) 50%, transparent 65%);
+  transform: translateX(-120%);
+}
+html.motion .btn--gold::after { animation: shimmer 5.5s ease-in-out 1.6s infinite; }
+@keyframes shimmer { 0%, 70% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+/* outline buttons get a travelling gold edge on hover */
+.btn--line { border-color: rgba(233, 238, 245, 0.32); }
+@media (hover: hover) {
+  .btn--line:hover {
+    border-color: transparent;
+    background: linear-gradient(var(--night), var(--night)) padding-box,
+                conic-gradient(from var(--spin), rgba(232, 198, 92, 0.15), var(--gold-hi) 18%, rgba(232, 198, 92, 0.15) 36%) border-box;
+    animation: spin 2.4s linear infinite;
+  }
+}
+@keyframes spin { to { --spin: 360deg; } }
+
+/* ---------- Page-head graph beams ---------- */
+.graph .beam { fill: none; stroke: #ffe9a3; stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: .07 2; stroke-dashoffset: .07; opacity: .95; }
+.graph .beam-glow { fill: none; stroke: rgba(240, 211, 110, 0.35); stroke-width: 10; stroke-linecap: round; stroke-dasharray: .07 2; stroke-dashoffset: .07; filter: blur(3px); }
+
+/* ---------- Aurora in call-to-action bands ---------- */
+.cta-band { position: relative; overflow: hidden; isolation: isolate; }
+.cta-band::before {
+  content: ""; position: absolute; inset: -40% -10%; z-index: -1; pointer-events: none;
+  background: radial-gradient(40% 60% at 20% 50%, rgba(232, 198, 92, 0.16), transparent 70%),
+              radial-gradient(35% 55% at 80% 40%, rgba(90, 140, 205, 0.28), transparent 70%);
+}
+html.motion .cta-band::before { animation: aurora 16s ease-in-out infinite alternate; }
+@keyframes aurora { from { transform: translate3d(-6%, 0, 0) rotate(0deg); } to { transform: translate3d(6%, 4%, 0) rotate(4deg); } }
+
+/* ---------- Innovation Engine: track fills as it scrolls past ---------- */
+html.motion .engine::before { transform-origin: 0 50%; transform: scaleX(var(--fill, 0)); }
+html.motion .engine-step { transition: background-color .5s ease, color .5s ease, box-shadow .5s ease, transform .5s cubic-bezier(.3, 1.5, .5, 1); }
+html.motion .engine li:not(.lit) .engine-step { background: #cfd8e3; color: var(--white); transform: scale(.85); }
+html.motion .engine li.lit .engine-step { box-shadow: 0 0 0 6px var(--paper), 0 0 0 10px rgba(196, 154, 44, 0.18); }
+html.motion .engine::after { clip-path: inset(0 calc(100% - var(--loop, 0) * 100%) 0 0); }
+@media (max-width: 860px) {
+  html.motion .engine::before { transform-origin: 50% 0; transform: scaleY(var(--fill, 0)); }
+}
+
+/* ---------- Glow that follows the cursor on content blocks ---------- */
+.glow { position: relative; isolation: isolate; }
+.glow::before {
+  content: ""; position: absolute; inset: -12px; z-index: -1; border-radius: 12px; pointer-events: none;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(196, 154, 44, 0.12), transparent 60%);
+  opacity: 0; transition: opacity .3s ease;
+}
+.glow:hover::before { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-cue span::after, .btn--gold::after, .btn--line:hover, .cta-band::before { animation: none !important; }
+}

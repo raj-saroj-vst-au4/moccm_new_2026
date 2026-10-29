@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motilal IITB</title>
+    <meta name="title" content="Motilal Oswal Centre for Capital Markets - IIT Bombay">
+    <meta name="description" content="A World-Class Centre of Excellence in Banking and Financial Markets Research, Education, and Training at IIT Bombay. Offering Ph.D., UG Minor, and ePGD programs in Financial Markets.">
+    <meta name="keywords" content="motilal iitb, IIT Bombay, Motilal Oswal, Capital Markets, Financial Markets, Banking, Finance Education, PhD Finance, MBA Finance, Financial Research, Investment Management, Corporate Finance, IIT Bombay Finance, Mumbai Finance Education">
+    <meta name="author" content="Motilal Oswal Centre for Capital Markets, IIT Bombay">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="google-site-verification" content="xhNVTiyeJmGZ92s2W5EuXZKyBdo0M9zGKjEbPL3YoVQ" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                            950: '#3b0764',
+                        },
+                        accent: {
+                            400: '#fcd34d',
+                            500: '#fbbf24',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #7e22ce 0%, #581c87 100%);
+        }
+
+        .section-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fbbf24;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Flywheel Innovation Engine - Clean Card Layout */
+        .flywheel-wrapper {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .flywheel-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            height: 700px;
+            margin: 0 auto;
+        }
+
+        /* Rotating outer ring */
+        @keyframes rotate-slow {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .flywheel-outer-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 660px;
+            height: 660px;
+            border: 2px dashed rgba(126, 34, 206, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate-slow 60s linear infinite;
+            z-index: 1;
+        }
+
+        .flywheel-circle-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 480px;
+            height: 480px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(126, 34, 206, 0.04) 0%, rgba(251, 191, 36, 0.04) 100%);
+            border: 2px solid rgba(126, 34, 206, 0.1);
+            z-index: 2;
+        }
+
+        /* Center hub */
+        .flywheel-hub {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 170px;
+            height: 170px;
+            background: linear-gradient(135deg, #7e22ce 0%, #581c87 100%);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            box-shadow: 0 15px 45px rgba(126, 34, 206, 0.5), inset 0 -6px 20px rgba(0, 0, 0, 0.3);
+            border: 4px solid #fbbf24;
+            animation: hub-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes hub-pulse {
+            0%, 100% {
+                box-shadow: 0 15px 45px rgba(126, 34, 206, 0.5), inset 0 -6px 20px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(251, 191, 36, 0.4);
+            }
+            50% {
+                box-shadow: 0 15px 45px rgba(126, 34, 206, 0.7), inset 0 -6px 20px rgba(0, 0, 0, 0.3), 0 0 0 12px rgba(251, 191, 36, 0);
+            }
+        }
+
+        .flywheel-hub-icon {
+            font-size: 2.3rem;
+            color: #fbbf24;
+            margin-bottom: 8px;
+            animation: rotate-slow 20s linear infinite;
+        }
+
+        .flywheel-hub-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            line-height: 1.3;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Segment cards */
+        .flywheel-segment-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 230px;
+            background: white;
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            border-top: 3px solid;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        /* .flywheel-segment-card:hover {
+            transform: scale(1.06);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            z-index: 15;
+        } */
+
+        .segment-card-1 {
+            transform: translate(-50%, -50%) translateY(-270px);
+            border-color: #a855f7;
+            --seg-color: #a855f7;
+        }
+
+        .segment-card-2 {
+            transform: translate(-50%, -50%) translateX(270px);
+            border-color: #fbbf24;
+            --seg-color: #fbbf24;
+        }
+
+        .segment-card-3 {
+            transform: translate(-50%, -50%) translateY(270px);
+            border-color: #9333ea;
+            --seg-color: #9333ea;
+        }
+
+        .segment-card-4 {
+            transform: translate(-50%, -50%) translateX(-270px);
+            border-color: #f59e0b;
+            --seg-color: #f59e0b;
+        }
+
+        .segment-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #7e22ce, #9333ea);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.95rem;
+            line-height: 32px;
+            text-align: center;
+            margin-bottom: 10px;
+            box-shadow: 0 3px 10px rgba(126, 34, 206, 0.3);
+        }
+
+        .segment-icon {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 12px;
+            background: var(--seg-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        /* .flywheel-segment-card:hover .segment-icon {
+            transform: scale(1.08) rotate(8deg);
+        } */
+
+        .segment-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .segment-quote {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #4b5563;
+            margin-bottom: 8px;
+            text-align: center;
+            font-style: italic;
+            line-height: 1.3;
+        }
+
+        .segment-description {
+            font-size: 0.75rem;
+            color: #6b7280;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* Connecting lines */
+        .flywheel-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1px;
+            height: 90px;
+            background: linear-gradient(to top, rgba(251, 191, 36, 0), rgba(251, 191, 36, 0.3));
+            transform-origin: bottom center;
+            z-index: 5;
+        }
+
+        .line-1 { transform: translate(-50%, -100%) translateY(-85px); }
+        .line-2 { transform: translate(-50%, 0%) rotate(90deg) translateY(-85px); }
+        .line-3 { transform: translate(-50%, 0%) translateY(85px) rotate(180deg); }
+        .line-4 { transform: translate(-50%, 0%) rotate(270deg) translateY(-85px); }
+
+        /* Flow arrows */
+        .flow-arrow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 1.5rem;
+            color: #fbbf24;
+            z-index: 15;
+            animation: arrow-float 2s ease-in-out infinite;
+        }
+
+        @keyframes arrow-float {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.9; }
+        }
+
+        .arrow-1 { transform: translate(-50%, -50%) translate(-90px, -160px) rotate(45deg); animation-delay: 0s; }
+        .arrow-2 { transform: translate(-50%, -50%) translate(160px, -90px) rotate(135deg); animation-delay: 0.5s; }
+        .arrow-3 { transform: translate(-50%, -50%) translate(90px, 160px) rotate(225deg); animation-delay: 1s; }
+        .arrow-4 { transform: translate(-50%, -50%) translate(-160px, 90px) rotate(315deg); animation-delay: 1.5s; }
+        .arrow-3 { transform: translate(-50%, -50%) translate(155px, 155px) rotate(225deg); animation-delay: 1s; }
+        .arrow-4 { transform: translate(-50%, -50%) translate(-155px, 155px) rotate(315deg); animation-delay: 1.5s; }
+        .program-detail {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .program-detail.open {
+            max-height: 5000px;
+        }
+
+        .advisor-card {
+            transition: all 0.3s ease;
+        }
+
+        .advisor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(126, 34, 206, 0.2);
+        }
+
+        /* Large screens (1024px - 1279px) */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+            .flywheel-container {
+                max-width: 600px;
+                height: 600px;
+            }
+
+            .flywheel-outer-ring {
+                width: 560px;
+                height: 560px;
+            }
+
+            .flywheel-circle-bg {
+                width: 400px;
+                height: 400px;
+            }
+
+            .flywheel-hub {
+                width: 140px;
+                height: 140px;
+            }
+
+            .flywheel-segment-card {
+                width: 190px;
+                padding: 16px;
+            }
+
+            .segment-card-1 {
+                transform: translate(-50%, -50%) translateY(-230px);
+            }
+
+            .segment-card-2 {
+                transform: translate(-50%, -50%) translateX(230px);
+            }
+
+            .segment-card-3 {
+                transform: translate(-50%, -50%) translateY(230px);
+            }
+
+            .segment-card-4 {
+                transform: translate(-50%, -50%) translateX(-230px);
+            }
+        }
+
+        /* Medium screens (768px - 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .flywheel-wrapper {
+                padding: 20px 10px;
+            }
+
+            .flywheel-container {
+                width: 100%;
+                max-width: 520px;
+                height: 520px;
+            }
+
+            .flywheel-outer-ring {
+                width: 500px;
+                height: 500px;
+            }
+
+            .flywheel-circle-bg {
+                width: 360px;
+                height: 360px;
+            }
+
+            .flywheel-hub {
+                width: 120px;
+                height: 120px;
+            }
+
+            .flywheel-hub-icon {
+                font-size: 1.8rem;
+            }
+
+            .flywheel-hub-title {
+                font-size: 0.85rem;
+            }
+
+            .flywheel-segment-card {
+                width: 160px;
+                padding: 12px;
+            }
+
+            .segment-card-1 {
+                transform: translate(-50%, -50%) translateY(-195px);
+            }
+
+            .segment-card-2 {
+                transform: translate(-50%, -50%) translateX(195px);
+            }
+
+            .segment-card-3 {
+                transform: translate(-50%, -50%) translateY(195px);
+            }
+
+            .segment-card-4 {
+                transform: translate(-50%, -50%) translateX(-195px);
+            }
+
+            .segment-number {
+                width: 26px;
+                height: 26px;
+                font-size: 0.8rem;
+                line-height: 26px;
+            }
+
+            .segment-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 1.2rem;
+            }
+
+            .segment-title {
+                font-size: 0.75rem;
+            }
+
+            .segment-quote {
+                font-size: 0.68rem;
+            }
+
+            .segment-description {
+                font-size: 0.6rem;
+            }
+
+            .flywheel-line {
+                height: 60px;
+            }
+
+            .line-1 { transform: translate(-50%, -100%) translateY(-60px); }
+            .line-2 { transform: translate(-50%, 0%) rotate(90deg) translateY(-60px); }
+            .line-3 { transform: translate(-50%, 0%) translateY(60px) rotate(180deg); }
+            .line-4 { transform: translate(-50%, 0%) rotate(270deg) translateY(-60px); }
+
+            .flow-arrow {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Small screens - flywheel hidden, mobile cards shown */
+        @media (max-width: 767px) {
+            .flywheel-wrapper {
+                display: none;
+            }
+        }
+
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Navbar Styles */
+        /* Extra small devices (phones, less than 640px) */
+        @media (max-width: 639px) {
+            nav .nav-link {
+                font-size: 0.875rem;
+            }
+            #mobile-menu a {
+                font-size: 0.9rem;
+                padding: 0.5rem 0.75rem;
+            }
+        }
+
+        /* Small devices (landscape phones, 640px - 767px) */
+        @media (min-width: 640px) and (max-width: 767px) {
+            #mobile-menu .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            #mobile-menu a {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Medium devices (tablets, 768px - 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            #mobile-menu .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            #mobile-menu a {
+                font-size: 0.9rem;
+                text-align: center;
+            }
+        }
+
+        /* Large devices (desktops, 1024px - 1279px) */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+            nav .nav-link {
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Extra large devices (large desktops, 1280px+) */
+        @media (min-width: 1280px) {
+            nav .nav-link {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="smooth-scroll bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14 sm:h-16 md:h-[72px] lg:h-20">
+                <div class="flex items-center space-x-0">
+                    <div class="w-12 h-10 sm:w-16 sm:h-12 md:w-20 md:h-14 lg:w-24 lg:h-16 rounded-lg flex items-center justify-center">
+                        <img src="motilal_images/iitblogodark.png" alt="Motilal Oswal Centre for Capital Markets Logo" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-lg flex items-center justify-center">
+                        <img src="motilal_images/MOCCM_Logo.png" alt="Partner Logo" class="max-h-full max-w-full object-contain">
+                    </div>
+                </div>
+                <div class="hidden lg:flex lg:space-x-4 xl:space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary-700 font-medium text-sm xl:text-base">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary-700 font-medium text-sm xl:text-base">About</a>
+                    <a href="#ecosystem" class="nav-link text-gray-700 hover:text-primary-700 font-medium text-sm xl:text-base">Ecosystem</a>
+                    <a href="#research" class="nav-link text-gray-700 hover:text-primary-700 font-medium text-sm xl:text-base">Research</a>
+                    <a href="#programs" class="nav-link text-gray-700 hover:text-primary-700 font-medium text-sm xl:text-base">Programs</a>
+                    <a href="#careers" class="nav-link text-gray-700 hover:text-primary-700 font-medium text-sm xl:text-base">Careers</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary-700 font-medium text-sm xl:text-base">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
+            <div class="px-4 py-3 space-y-3 sm:grid sm:grid-cols-2 sm:gap-2 sm:space-y-0 md:grid-cols-4">
+                <a href="#home" class="block text-gray-700 hover:text-primary-700 hover:bg-primary-50 font-medium py-2 px-3 rounded-lg transition">Home</a>
+                <a href="#about" class="block text-gray-700 hover:text-primary-700 hover:bg-primary-50 font-medium py-2 px-3 rounded-lg transition">About</a>
+                <a href="#ecosystem" class="block text-gray-700 hover:text-primary-700 hover:bg-primary-50 font-medium py-2 px-3 rounded-lg transition">Ecosystem</a>
+                <a href="#research" class="block text-gray-700 hover:text-primary-700 hover:bg-primary-50 font-medium py-2 px-3 rounded-lg transition">Research</a>
+                <a href="#programs" class="block text-gray-700 hover:text-primary-700 hover:bg-primary-50 font-medium py-2 px-3 rounded-lg transition">Programs</a>
+                <a href="#careers" class="block text-gray-700 hover:text-primary-700 hover:bg-primary-50 font-medium py-2 px-3 rounded-lg transition">Careers</a>
+                <a href="#contact" class="block text-gray-700 hover:text-primary-700 hover:bg-primary-50 font-medium py-2 px-3 rounded-lg transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-12 gradient-bg text-white relative overflow-hidden min-h-screen flex items-center">
+        <!-- Background Video/Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute bottom-20 left-1/4 text-7xl animate-pulse" style="animation-delay: 1s;">
+                
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="absolute top-40 right-20 text-6xl animate-pulse" style="animation-delay: 0.5s;">
+                <i class="fas fa-coins"></i>
+            </div>
+            <div class="absolute top-10 left-10 text-8xl animate-pulse">
+                <i class="fas fa-building-columns"></i>
+            </div>
+            <div class="absolute bottom-40 right-1/3 text-5xl animate-pulse" style="animation-delay: 1.5s;">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-24 relative z-10">
+            <div class="text-center section-animate">
+                <!-- Centre Logo -->
+                <div class="flex items-center justify-center gap-4 mx-auto mb-8">
+                    <div class="w-28 h-28 flex items-center justify-center">
+                        <img src="https://www.civil.iitb.ac.in/hsl/logo.png" alt="IIT Bombay Logo" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <!-- <span class="text-gray-400 text-2xl font-light">×</span> -->
+                    <!-- <div class="w-48 h-48 flex items-center justify-center">
+                        <img src="motilal_images/MOCCM_Logo.png" alt="Partner Logo" class="max-h-full max-w-full object-contain">
+                    </div> -->
+                </div>
+
+                <h1 class="text-2xl md:text-4xl font-bold mb-6">
+                    Motilal Oswal Centre for Capital Markets (MOCCM)
+                </h1>
+                <p class="text-2xl md:text-4xl mb-4 text-purple-100 font-bold">
+                    Indian Institute of Technology Bombay
+                </p>
+
+                <!-- Main Headline -->
+                <h2 class="text-xl md:text-2xl font-bold mb-4 text-accent-400">
+                    Engineering the Future of Finance
+                </h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-purple-200 mb-6">
+                    World-class centre of excellence in banking and financial markets research, education and training
+                </p>
+
+                <!-- Sub-headline -->
+                <p class="text-xl md:text-2xl font-semibold mb-8 text-white">
+                    Industry-defined. Academia-led. Action-focused.
+                </p>
+
+                <!-- Call to Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                    <a href="#ecosystem" class="cta-button bg-accent-500 text-primary-900 px-8 py-4 rounded-lg font-semibold hover:bg-accent-400 transition inline-flex items-center justify-center">
+                        <i class="fas fa-handshake mr-2"></i>
+                        Shape the Future of Finance
+                        <!-- <span class="text-sm ml-2">(Join Consortium)</span> -->
+                    </a>
+                    <a href="#research" class="cta-button bg-white text-primary-700 px-8 py-4 rounded-lg font-semibold hover:bg-purple-50 transition inline-flex items-center justify-center">
+                        <i class="fas fa-flask mr-2"></i>
+                        Advance the Frontier
+                        <!-- <span class="text-sm ml-2">(Research Awards)</span> -->
+                    </a>
+                    <a href="#programs" class="cta-button bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-purple-500 transition inline-flex items-center justify-center">
+                        <i class="fas fa-graduation-cap mr-2"></i>
+                        Elevate Your Career
+                        <!-- <span class="text-sm ml-2">(Degree Pathways)</span> -->
+                    </a>
+                </div>
+
+                <!-- Ticker -->
+                <!-- <div class="inline-block bg-accent-500 text-primary-900 px-6 py-3 rounded-full text-lg font-bold animate-pulse">
+                    <i class="fas fa-rocket mr-2"></i>
+                    Launching January 2026
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Flywheel -->
+    <section id="about" class="py-20 bg-white overflow-x-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-animate">
+                <div class="text-center mb-16">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary-600 to-primary-800 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-eye text-3xl text-white"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-primary-900 mb-4">Vision</h2>
+                    <div class="w-24 h-1 bg-accent-500 mx-auto mb-6"></div>
+                    <p class="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                        India's premier innovation engine for Capital Markets: convening high-impact collaboration, delivering actionable research, and supplying future-ready talent to the global financial services industry.
+                    </p>
+                </div>
+
+                <!-- Flywheel Innovation Engine -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-center text-primary-800 mb-12">Innovation Engine</h3>
+
+                    <div class="flywheel-wrapper hidden md:block">
+                        <div class="flywheel-container">
+                            <!-- Rotating outer decorative ring -->
+                            <div class="flywheel-outer-ring"></div>
+
+                            <!-- Background circle -->
+                            <div class="flywheel-circle-bg"></div>
+
+                            <!-- Connecting lines from center to cards -->
+                            <div class="flywheel-line line-1"></div>
+                            <div class="flywheel-line line-2"></div>
+                            <div class="flywheel-line line-3"></div>
+                            <div class="flywheel-line line-4"></div>
+
+                            <!-- Flow direction arrows -->
+                            <!-- <div class="flow-arrow arrow-1">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="flow-arrow arrow-2">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="flow-arrow arrow-3">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="flow-arrow arrow-4">
+                                <i class="fas fa-arrow-right"></i>
+                            </div> -->
+
+                            <!-- Segment Card 1: Sourcing (Top) -->
+                            <div class="flywheel-segment-card segment-card-1">
+                                <div class="segment-number">1</div>
+                                <div class="segment-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h5 class="segment-title">Sourcing: Innovation Calls</h5>
+                                <p class="segment-quote">"We don't guess problems. We convene them."</p>
+                                <p class="segment-description">Research agendas defined by real-world friction points and commercial opportunities.</p>
+                            </div>
+
+                            <!-- Segment Card 2: Building (Right) -->
+                            <div class="flywheel-segment-card segment-card-2">
+                                <div class="segment-number">2</div>
+                                <div class="segment-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <h5 class="segment-title">Building: Applied Research</h5>
+                                <p class="segment-quote">"From working papers to working prototypes."</p>
+                                <p class="segment-description">Develop deployable prototypes, intellectual property (IP), and policy frameworks.</p>
+                            </div>
+
+                            <!-- Segment Card 3: Empowering (Bottom) -->
+                            <div class="flywheel-segment-card segment-card-3">
+                                <div class="segment-number">3</div>
+                                <div class="segment-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h5 class="segment-title">Empowering: Future-Ready Talent</h5>
+                                <p class="segment-quote">"Curriculum built on live challenges."</p>
+                                <p class="segment-description">Academic programs integrated with live research projects.</p>
+                            </div>
+
+                            <!-- Segment Card 4: Scaling (Left) -->
+                            <div class="flywheel-segment-card segment-card-4">
+                                <div class="segment-number">4</div>
+                                <div class="segment-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h5 class="segment-title">Scaling: Returning Value</h5>
+                                <p class="segment-quote">"Deliver trained professionals, spin-off startups, and validated technology."</p>
+                                <p class="segment-description">Self-sustaining model that fuels the next cycle of innovation.</p>
+                            </div>
+
+                            <!-- Center hub with rotating icon -->
+                            <div class="flywheel-hub">
+                                <!-- <i class="fas fa-sync-alt flywheel-hub-icon"></i> -->
+                                <div class="flywheel-hub-title">Innovation<br>Engine</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile-friendly description cards (shown only on mobile) -->
+                    <div class="block md:hidden space-y-4 mt-8">
+                        <div class="bg-gradient-to-r from-purple-50 to-purple-100 p-5 rounded-xl shadow-md border-l-4 border-purple-500">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">1</div>
+                                <div>
+                                    <h5 class="font-bold text-purple-900 mb-1">Sourcing: Innovation Calls</h5>
+                                    <p class="text-sm text-purple-800 mb-1 italic">"We don't guess problems. We convene them."</p>
+                                    <p class="text-xs text-gray-700">Research agendas defined by real-world friction points and commercial opportunities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 p-5 rounded-xl shadow-md border-l-4 border-yellow-500">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">2</div>
+                                <div>
+                                    <h5 class="font-bold text-yellow-900 mb-1">Building: Applied Research</h5>
+                                    <p class="text-sm text-yellow-800 mb-1 italic">"From working papers to working prototypes."</p>
+                                    <p class="text-xs text-gray-700">Develop deployable prototypes, intellectual property (IP), and policy frameworks.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-r from-purple-50 to-purple-100 p-5 rounded-xl shadow-md border-l-4 border-purple-400">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-purple-400 rounded-full flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">3</div>
+                                <div>
+                                    <h5 class="font-bold text-purple-900 mb-1">Empowering: Future-Ready Talent</h5>
+                                    <p class="text-sm text-purple-800 mb-1 italic">"Curriculum built on live challenges."</p>
+                                    <p class="text-xs text-gray-700">Academic programs integrated with live research projects.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 p-5 rounded-xl shadow-md border-l-4 border-yellow-400">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">4</div>
+                                <div>
+                                    <h5 class="font-bold text-yellow-900 mb-1">Scaling: Returning Value</h5>
+                                    <p class="text-sm text-yellow-800 mb-1 italic">"Deliver trained professionals, spin-off startups, and validated technology."</p>
+                                    <p class="text-xs text-gray-700">Self-sustaining model that fuels the next cycle of innovation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="bg-primary-50 rounded-xl p-8 md:p-12 space-y-6">
+                    <p class="text-gray-700 leading-relaxed">
+                        The Centre will house all the required resources - expertise, data, analytical tools, software, use cases, simulations, etc. It will be the go-to place for any support in research, training, and policy formulation in the country.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        The Centre will enter into collaborative agreements with similar entities in other geographies for mutual benefit - faculty and student exchange, joint conferences/workshops, joint research projects, joint academic programmes, etc.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        The Centre will also encourage and promote startups in the emerging areas such as Fintech, AI/ML in Banking and Finance, Insuretech, Wealth Management, Regtech, Finance Apps, Financial Analytics, Blockchain, Digital Currency, etc.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem Section -->
+    <section id="ecosystem" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-animate">
+                <div class="text-center mb-16">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary-600 to-primary-800 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-network-wired text-3xl text-white"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-primary-900 mb-4">Ecosystem</h2>
+                    <div class="w-24 h-1 bg-accent-500 mx-auto"></div>
+                </div>
+
+                <!-- Advisory Board -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-primary-800 mb-8 text-center">Advisory Board</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-64 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                                <img src="motilal_images/uvbhandarkar.jpg" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. Upendra V Bhandarkar</h4>
+                                <p class="text-sm text-gray-600">Dean ACR, Convenor</p>
+                                <p class="text-xs text-gray-500">IIT Bombay</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-64 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/sonti.png" class="w-full h-full object-cover object-top">
+                                </div>
+                            </div>
+                            <div class="p-4 text-center">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. S.V.D. Nageswara Rao</h4>
+                                <p class="text-sm text-gray-600">Professor-in-Charge</p>
+                                <p class="text-xs text-gray-500">IIT Bombay</p>
+                            </div>
+                        </div>
+                        
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-64 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                                <img src="motilal_images/vvarcharya.jpg" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. Viral V. Acharya</h4>
+                                <p class="text-sm text-gray-600">Stern School of Business, NYU</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-64 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                                <img src="motilal_images/rvkelkar.jpg" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. Ram V. Kelkar</h4>
+                                <p class="text-sm text-gray-600">MD, Milliman</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-64 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                                <img src="motilal_images/vagrawal.jpg" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h4 class="font-bold text-gray-900 mb-1">Mr. Vaibhav Agrawal</h4>
+                                <p class="text-sm text-gray-600">CIO, Motilal Oswal</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-64 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                                <img src="motilal_images/akchauhan.avif" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h4 class="font-bold text-gray-900 mb-1">Mr. Ashish Kumar Chauhan</h4>
+                                <p class="text-sm text-gray-600">MD & CEO, National Stock Exchange</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-64 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                                <img src="motilal_images/hkbhanwala.jpg" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h4 class="font-bold text-gray-900 mb-1">Dr. Harsh Kumar Bhanwala</h4>
+                                <p class="text-sm text-gray-600">Chairman, Multi Commodity Exchange of India Lmited (MCX)</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-64 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                                <img src="motilal_images/dgupta.jpg" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h4 class="font-bold text-gray-900 mb-1">Mr. Dipak Gupta</h4>
+                                <p class="text-sm text-gray-600">Former MD & CEO Kotak Mahindra Bank</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-64 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+                                <img src="motilal_images/nchoksi.jpeg" class="w-full h-full object-cover object-top">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h4 class="font-bold text-gray-900 mb-1">Mr. Neeraj Choksi</h4>
+                                <p class="text-sm text-gray-600">Founder, NJ Group</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Partners -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-primary-800 mb-8 text-center">Partners</h3>
+                    <div class="flex flex-wrap justify-center items-center gap-12">
+                        <div class="bg-white p-6 rounded-xl shadow-lg">
+                            <img src="motilal_images/iitblogodark.png" alt="IIT Bombay" class="h-28">
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-lg">
+                            <img src="motilal_images/motilaloswal.png" alt="Motilal Oswal Financial Services" class="h-28">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MOCCM Management -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-primary-800 mb-8 text-center">Team</h3>
+                    <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-64 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/sonti.png" class="w-full h-full object-cover object-top">
+                                </div>
+                            </div>
+                            <div class="p-6 text-center">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">Prof. S.V.D. Nageswara Rao</h4>
+                                <p class="text-gray-600">Professor-in-Charge</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-64 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/amitchakarabarty.jpeg" class="w-full h-full object-cover object-top">
+                                </div>
+                            </div>
+                            <div class="p-6 text-center">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">Amit Chakarabarty</h4>
+                                <p class="text-gray-600">Program Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Faculty Members -->
+                <div class="mb-12">
+                    <h3 class="text-3xl font-bold text-primary-800 mb-8 text-center">Faculty Members</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Faculty cards from original website -->
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-56 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/ksuresh.png" class="w-full h-full object-cover object-top">
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. K. Suresh Kumar</h4>
+                                <p class="text-sm text-gray-600">Department of Mathematics</p>
+                                <p class="text-xs text-gray-500">Risk-sensitive Control, Mathematical Finance</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-56 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/hemachandra.png" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. N. Hemachandra</h4>
+                                <p class="text-sm text-gray-600">IEOR</p>
+                                <p class="text-xs text-gray-500">Machine Learning, Reinforcement Learning</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-56 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/mallikarjuna.png" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. K.S. Mallikarjuna Rao</h4>
+                                <p class="text-sm text-gray-600">IEOR</p>
+                                <p class="text-xs text-gray-500">Game Theory, Stochastic Control</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-56 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/piyush.jpg" class="w-full h-full object-cover object-top">
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. Piyush Pandey</h4>
+                                <p class="text-sm text-gray-600">SOM</p>
+                                <p class="text-xs text-gray-500">Financial Derivatives, Investment Management</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-56 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/puja.jpg" class="w-full h-full object-cover object-top">
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. Puja Padhi</h4>
+                                <p class="text-sm text-gray-600">Department of Economics</p>
+                                <p class="text-xs text-gray-500">Financial and Monetary Economics</p>
+                            </div>
+                        </div>
+
+                        <!-- <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-56 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/radeef.png" class="w-full h-full object-cover object-top">
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. Radeef Chundakkadan</h4>
+                                <p class="text-sm text-gray-600">Department of Economics</p>
+                                <p class="text-xs text-gray-500">Monetary Policy, Financial Markets</p>
+                            </div>
+                        </div> -->
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-56 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/sudeep.webp" class="w-full h-full object-cover object-top">
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. Sudeep R. Bapat</h4>
+                                <p class="text-sm text-gray-600">SOM</p>
+                                <p class="text-xs text-gray-500">Time Series, AI/ML in Finance</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-56 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/ankur.png" class="w-full h-full object-cover object-top">
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. Ankur Kulkarni</h4>
+                                <p class="text-sm text-gray-600">Systems and Control</p>
+                                <p class="text-xs text-gray-500">Game Theory, Stochastic Control</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-56 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="https://www.som.iitb.ac.in/wp-content/uploads/2019/05/Rohan-High-Res-Photo.jpg" class="w-full h-full object-cover object-top">
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. Rohan Chinchwadkar</h4>
+                                <p class="text-sm text-gray-600">SOM</p>
+                                <p class="text-xs text-gray-500">Entrepreneurial Finance, AI in Finance</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-56 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/vabapat.webp" class="w-full h-full object-cover object-top">
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. Varadraj Bapat</h4>
+                                <p class="text-sm text-gray-600">Professor of Accounting and Finance</p>
+                                <p class="text-xs text-gray-500">IIT Bombay</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-56 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/asingh.jpg" class="w-full h-full object-cover object-top">
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. Ashish Singh</h4>
+                                <p class="text-sm text-gray-600">Associate Professor, Economic Development</p>
+                                <p class="text-xs text-gray-500">IIT Bombay</p>
+                            </div>
+                        </div>
+
+                        <div class="advisor-card bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="h-56 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0">
+                                    <img src="motilal_images/vbeloskar.jpg" class="w-full h-full object-cover object-top">
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-gray-900 mb-1">Prof. Ved Beloskar</h4>
+                                <p class="text-sm text-gray-600">Assistant Professor of Finance</p>
+                                <p class="text-xs text-gray-500">IIT Bombay</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center">
+                    <a href="#contact" class="cta-button inline-block bg-primary-700 text-white px-10 py-4 rounded-lg font-semibold hover:bg-primary-600 transition">
+                        <i class="fas fa-handshake mr-2"></i>
+                        Shape the Future of Finance – Join the MOCCM Consortium
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-animate">
+                <div class="text-center mb-16">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary-600 to-primary-800 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-flask text-3xl text-white"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-primary-900 mb-4">Solving for the Indian Financial Sector</h2>
+                    <div class="w-24 h-1 bg-accent-500 mx-auto mb-4"></div>
+                    <p class="text-xl text-gray-600">
+                        We don't just publish papers; we build prototypes, frameworks, and policy tools.
+                    </p>
+                </div>
+
+                <!-- Featured Live Projects -->
+                <div class="mb-12">
+                    <h3 class="text-3xl font-bold text-primary-800 mb-8 text-center">Featured "Live" Projects</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gradient-to-br from-primary-50 to-white p-4 rounded-xl shadow-lg border-l-4 border-primary-600 hover:shadow-2xl transition">
+                            <div class="flex items-start mb-4">
+                                <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-brain text-white text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-primary-900">Multimodal AI for Stock Price Prediction</h4>
+                            </div>
+                            <p class="text-gray-700">
+                                Developing frameworks to synthesize text, audio, and market data for better forecasting.
+                            </p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-accent-50 to-white p-4 rounded-xl shadow-lg border-l-4 border-accent-500 hover:shadow-2xl transition">
+                            <div class="flex items-start mb-4">
+                                <div class="w-12 h-12 bg-accent-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-language text-white text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-primary-900">Vernacular LLMs for Finance</h4>
+                            </div>
+                            <p class="text-gray-700">
+                                Breaking language barriers in Indian finance with specialized Large Language Models.
+                            </p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-primary-50 to-white p-4 rounded-xl shadow-lg border-l-4 border-primary-600 hover:shadow-2xl transition">
+                            <div class="flex items-start mb-4">
+                                <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-robot text-white text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-primary-900">AI-Driven Financial Reasoning</h4>
+                            </div>
+                            <p class="text-gray-700">
+                                Enhancing decision-making transparency in automated financial systems.
+                            </p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-accent-50 to-white p-4 rounded-xl shadow-lg border-l-4 border-accent-500 hover:shadow-2xl transition">
+                            <div class="flex items-start mb-4">
+                                <div class="w-12 h-12 bg-accent-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-vial text-white text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-primary-900">FinTech Innovation Sandbox</h4>
+                            </div>
+                            <p class="text-gray-700">
+                                <span class="inline-block bg-yellow-200 text-yellow-900 px-2 py-1 rounded text-xs font-semibold mr-2">Coming Soon</span>
+                                Initial focus on compliance tech (RegTech and SupTech).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center">
+                    <a href="#contact" class="cta-button inline-block bg-primary-700 text-white px-10 py-4 rounded-lg font-semibold hover:bg-primary-600 transition">
+                        <i class="fas fa-award mr-2"></i>
+                        Advance the Frontier – Secure MOCCM Research Awards / Grants
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-animate">
+                <div class="text-center mb-16">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary-600 to-primary-800 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-graduation-cap text-3xl text-white"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-primary-900 mb-4">Forging the Next Generation of FinTech Leaders</h2>
+                    <div class="w-24 h-1 bg-accent-500 mx-auto mb-4"></div>
+                    <p class="text-xl text-gray-600">Academic programs commencing soon</p>
+                </div>
+
+                <!-- Program Cards -->
+                <div class="space-y-6 mb-12">
+                    <!-- UG Minor -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <button class="w-full program-toggle px-8 py-6 bg-gradient-to-r from-primary-700 to-primary-600 text-white text-left flex justify-between items-center hover:from-primary-600 hover:to-primary-500 transition" data-program="ug">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Undergraduate (Minor in Financial Markets)</h3>
+                                <p class="text-purple-200">Click to view details</p>
+                            </div>
+                            <i class="fas fa-chevron-down text-2xl transform transition-transform"></i>
+                        </button>
+                        <div class="program-detail" id="ug-detail">
+                            <div class="p-8">
+                                <p class="text-gray-700 mb-6 leading-relaxed">
+                                    The Centre proposes to offer the UG minor in Financial Markets. The students are required to complete a minimum of 30 credits by choosing from the following list of courses to be eligible for the minor. The registration limit will be 40 for the courses proposed by the centre, and the (UG) students will be selected based on CGPA.
+                                </p>
+                                <h4 class="text-lg font-bold text-primary-900 mb-4">Available Courses:</h4>
+                                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Economics</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Accounting and Finance</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Corporate Finance</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Financial and Cost Accounting</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Investment Management</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Financial Institutions and Markets</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Management of Banking and Financial Services</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Security Analysis and Portfolio Management</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Derivatives and Risk Management</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">International Finance</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PhD Program - Detailed from original -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <button class="w-full program-toggle px-8 py-6 bg-gradient-to-r from-primary-700 to-primary-600 text-white text-left flex justify-between items-center hover:from-primary-600 hover:to-primary-500 transition" data-program="phd">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">PhD (Financial Markets)</h3>
+                                <p class="text-purple-200">Click to view details</p>
+                            </div>
+                            <i class="fas fa-chevron-down text-2xl transform transition-transform"></i>
+                        </button>
+                        <div class="program-detail" id="phd-detail">
+                            <div class="p-8">
+                            <h4 class="text-2xl font-bold text-primary-800 mb-6">Eligibility Criteria for Admission</h4>
+
+                            <div class="mb-8">
+                                <h5 class="text-xl font-bold text-primary-700 mb-4 flex items-center">
+                                    <span class="bg-accent-500 text-primary-900 rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">A</span>
+                                    Candidates from India
+                                </h5>
+                                <p class="text-gray-700 mb-4">At least one of the following criteria must be met:</p>
+
+                                <div class="space-y-6">
+                                    <div class="border-l-4 border-primary-300 pl-6">
+                                        <p class="text-gray-700 font-semibold mb-2">(i) Four year Bachelor degree</p>
+                                        <p class="text-gray-600">
+                                            Four year Bachelor degree in Engineering/Technology, Science, Mathematics, Economics, Management, Statistics with 60% marks/6.5 CPI (55% marks/6.0 CPI for SC/ST) and at least two years work experience.
+                                        </p>
+                                    </div>
+
+                                    <div class="border-l-4 border-primary-300 pl-6">
+                                        <p class="text-gray-700 font-semibold mb-2">(ii) Masters degree</p>
+                                        <p class="text-gray-600">
+                                            Masters degree in Management, Accounting, Finance, Economics, Financial Markets, Capital Markets, Banking, Insurance, Securities Markets, Mathematics, Statistics, Engineering/Technology (MBA/M.Tech./M.S./M.Sc./M.A./M.Com./M.Phil., etc.) or 2 year PG Diploma in Management from institutions / universities incorporated by an act of parliament or state legislature in India or other institutions declared to be deemed as University under Section 3 of the UGC Act, 1956, or possess an equivalent qualification recognized by the Ministry of Education, Government of India or AICTE or UGC or AIU or reputed foreign university with 60% marks/6.5 CPI (55% marks/ 6.0 CPI for SC/ST).
+                                        </p>
+                                    </div>
+
+                                    <div class="border-l-4 border-primary-300 pl-6">
+                                        <p class="text-gray-700 font-semibold mb-2">(iii) Executive MBA</p>
+                                        <p class="text-gray-600">
+                                            Executive MBA of at least one year duration from IITs/IIMs or institutions / universities incorporated by an act of parliament or state legislature in India or other institutions declared to be deemed as University under Section 3 of the UGC Act, 1956, or possess an equivalent qualification recognized by the Ministry of Education, Government of India or AICTE or UGC or AIU or reputed foreign university with 60% marks/6.5 CPI (55% marks/ 6.0 CPI for SC/ST).
+                                        </p>
+                                    </div>
+
+                                    <div class="border-l-4 border-primary-300 pl-6">
+                                        <p class="text-gray-700 font-semibold mb-2">(iv) Professional qualification</p>
+                                        <p class="text-gray-600">
+                                            CA with 60% marks/ 6.5 CPI (55% marks/ 6.0 CPI for SC/ST) in the preceding degree/Bachelors Degree (B.Sc./ B.Com./ BA/ BS/ BBA).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-8">
+                                <h5 class="text-xl font-bold text-primary-700 mb-4">Candidates from Abroad</h5>
+                                <p class="text-gray-700 mb-4">At least one of the following criteria must be met:</p>
+
+                                <div class="space-y-6">
+                                    <div class="border-l-4 border-primary-300 pl-6">
+                                        <p class="text-gray-700 font-semibold mb-2">(i) Four year Bachelor degree</p>
+                                        <p class="text-gray-600">
+                                            Four year Bachelor degree in Engineering/Technology, Science, Mathematics, Economics, Management, Statistics with 60% marks/6.5 CPI (55% marks/6.0 CPI for SC/ST) and at least two years work experience.
+                                        </p>
+                                    </div>
+
+                                    <div class="border-l-4 border-primary-300 pl-6">
+                                        <p class="text-gray-700 font-semibold mb-2">(ii) Masters degree</p>
+                                        <p class="text-gray-600">
+                                            Masters degree in Management, Accounting, Finance, Economics, Financial Markets, Capital Markets, Banking, Insurance, Securities Markets, Mathematics, Statistics, Engineering/Technology (MBA/M.Tech./M.S./M.Sc./M.A./M.Com./ /M.Phil., etc.) or 2 year PG Diploma in Management from institutions / universities incorporated by an act of parliament or state legislature in India or other institutions declared to be deemed as University under Section 3 of the UGC Act, 1956, or possess an equivalent qualification recognized by the Ministry of Education, Government of India or AICTE or UGC or AIU or reputed foreign university with 60% marks/6.5 CPI (55% marks/ 6.0 CPI for SC/ST).
+                                        </p>
+                                    </div>
+
+                                    <div class="border-l-4 border-primary-300 pl-6">
+                                        <p class="text-gray-700 font-semibold mb-2">(iii) Executive MBA</p>
+                                        <p class="text-gray-600">
+                                            Executive MBA of at least one year duration from IITs/IIMs or institutions / universities incorporated by an act of parliament or state legislature in India or other institutions declared to be deemed as University under Section 3 of the UGC Act, 1956, or possess an equivalent qualification recognized by the Ministry of Education, Government of India or AICTE or UGC or AIU or reputed foreign university with 60% marks/6.5 CPI (55% marks/ 6.0 CPI for SC/ST).
+                                        </p>
+                                    </div>
+
+                                    <div class="border-l-4 border-primary-300 pl-6">
+                                        <p class="text-gray-700 font-semibold mb-2">(iv) Valid GMAT</p>
+                                        <p class="text-gray-600">
+                                            The candidate should have valid GMAT score
+                                        </p>
+                                    </div>
+
+                                    <p class="text-gray-600">Candidates holding foreign passports (including persons with OCI or PIO cards) will be eligible to apply in this category. <br>For Ph.D. Application Form: <a href="http://www.ir.iitb.ac.in/?page_id=26" class="text-blue-600">http://www.ir.iitb.ac.in/?page_id=26</a></p>
+                                </div>
+                            </div>
+
+                            <div class="mb-8">
+                                <h5 class="text-xl font-bold text-primary-700 mb-4 flex items-center">
+                                    <span class="bg-accent-500 text-primary-900 rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm">B</span>
+                                    Research Proposal (for both Indian and Foreign Students)
+                                </h5>
+
+                                <div class="space-y-6">
+                                    <p class="text-gray-700">
+                                        A research proposal (1000-1500 words) on a topic of interest instead of Statement of Purpose (SOP). It should contain:
+                                    </p>
+
+                                    <ul class="list-disc ml-6 text-gray-700 space-y-2">
+                                        <li>Problem definition</li>
+                                        <li>Review of literature</li>
+                                        <li>Methodology</li>
+                                    </ul>
+
+                                    <p class="text-gray-700 font-semibold">
+                                        Applications without research proposal will not be considered.
+                                    </p>
+
+                                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                                        <p class="text-gray-700 mb-2"><strong>Note 1:</strong> The candidates with four year Bachelor degree should have valid CAT/GMAT/GATE/GRE score to be eligible for financial support.</p>
+                                        <p class="text-gray-700"><strong>Note 2:</strong> Criteria for awarding Teaching Assistantship, and application categories are as per the guidelines mentioned in A.6 of the Ph.D. admissions brochure.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-8">
+                                <h5 class="text-xl font-bold text-primary-700 mb-4">Admission Process</h5>
+                                <p class="text-gray-700">
+                                    The eligible candidates will be shortlisted based on their performance in the screening test comprising quantitative ability, data sufficiency, data interpretation, research aptitude. The final selection will be based on performance in the interview.
+                                </p>
+                            </div>
+
+                            <div class="bg-primary-50 rounded-lg p-6">
+                                <h5 class="text-lg font-bold text-primary-800 mb-3">List of Courses (minimum 52 credits)</h5>
+                                <p class="mb-4 text-gray-600">The candidates are required to complete a minimum of 52 credits over two or three semesters irrespective of their last qualification, and the confirmation of Ph.D. will be subject to satisfactory performance during course work.</p>
+                                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-primary-800 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Corporate Finance – Core Compulsory</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Financial and Cost Accounting</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Investment Management</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Financial Institutions and Markets</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-primary-800 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Theory of Finance – Core Compulsory</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-primary-800 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Introduction to Research Methods – Core Compulsory</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Statistics for Management Research</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-primary-800 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Economics – Core Compulsory</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Qualitative Research Methodologies</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Security Analysis and Portfolio Management</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Fixed Income Securities</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Business Forecasting</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Mergers, Acquisitions, and Business Valuation</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Derivatives and Risk Management</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Management of Banking and Financial Services</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">International Finance</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Sustainable Finance</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Financial Modelling</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Business Analytics and Simulation</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Behavioural Finance</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Engineering Economic Analysis</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Statistical Methods of Analysis and Design</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Engineering Statistics</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Econometrics – I and Econometrics II</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent-500 mr-2 mt-1"></i>
+                                        <span class="text-gray-700">Credit Seminar</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- ePGD Program -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <button class="w-full program-toggle px-8 py-6 bg-gradient-to-r from-primary-700 to-primary-600 text-white text-left flex justify-between items-center hover:from-primary-600 hover:to-primary-500 transition" data-program="epgd">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">ePGD (Financial Markets)</h3>
+                                <p class="text-purple-200">Click to view details</p>
+                            </div>
+                            <i class="fas fa-chevron-down text-2xl transform transition-transform"></i>
+                        </button>
+                        <div class="program-detail" id="epgd-detail">
+                            <div class="p-8">
+                                <p class="text-gray-700 mb-6 leading-relaxed">
+                                    The Centre proposes to offer the online PG Diploma in Financial Markets with evaluation in person. The candidates with a degree in any discipline are eligible to apply for admission. The students are required to complete a minimum of 36 credits.
+                                </p>
+
+                                <div class="overflow-x-auto">
+                                    <table class="w-full border-collapse">
+                                        <thead>
+                                            <tr class="bg-primary-100">
+                                                <th class="border border-primary-300 p-4 text-left font-bold text-primary-900">Type of Course</th>
+                                                <th class="border border-primary-300 p-4 text-left font-bold text-primary-900">Credits</th>
+                                                <th class="border border-primary-300 p-4 text-left font-bold text-primary-900">Details</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="border border-gray-300 p-4 text-gray-700">5 Core courses</td>
+                                                <td class="border border-gray-300 p-4 text-gray-700 font-semibold">30</td>
+                                                <td class="border border-gray-300 p-4 text-gray-600 text-sm">Financial and Cost Accounting, Economics of Financial Markets, Corporate Finance, Investment Management, Financial Institutions and Markets</td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="border border-gray-300 p-4 text-gray-700">3 Elective courses</td>
+                                                <td class="border border-gray-300 p-4 text-gray-700 font-semibold">6</td>
+                                                <td class="border border-gray-300 p-4 text-gray-600 text-sm">Management of Banking and Financial Services, Security Analysis and Portfolio Management, Derivatives and Risk Management</td>
+                                            </tr>
+                                            <tr class="bg-primary-50 font-bold">
+                                                <td class="border border-primary-300 p-4 text-primary-900">Total credits</td>
+                                                <td class="border border-primary-300 p-4 text-primary-900">36</td>
+                                                <td class="border border-primary-300 p-4 text-primary-800 text-sm">Five core courses, and one elective</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Programs -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <button class="w-full program-toggle px-8 py-6 bg-gradient-to-r from-primary-700 to-primary-600 text-white text-left flex justify-between items-center hover:from-primary-600 hover:to-primary-500 transition" data-program="cert">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Certificate Programs</h3>
+                                <p class="text-purple-200">Click to view details</p>
+                            </div>
+                            <i class="fas fa-chevron-down text-2xl transform transition-transform"></i>
+                        </button>
+                        <div class="program-detail" id="cert-detail">
+                            <div class="p-8">
+                                <p class="text-gray-700 mb-6 leading-relaxed">
+                                    Explore our certificate programs designed to equip professionals and students with specialized skills in financial markets and emerging technologies.
+                                </p>
+                                <ul class="space-y-4" id="cert-programs-list">
+                                    <!-- Add new certificate programs as <li> items below -->
+                                    <li>
+                                        <a href="https://www.jaroeducation.com/certificate-course-in-investment-strategies-and-portfolio-management-in-the-age-of-ai" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 bg-primary-50 rounded-lg hover:bg-primary-100 transition group">
+                                            <div class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-certificate text-white"></i>
+                                            </div>
+                                            <span class="text-primary-800 font-semibold group-hover:text-primary-600 transition">Certificate Course in Investment Strategies and Portfolio Management in the Age of AI</span>
+                                            <i class="fas fa-external-link-alt text-primary-400 ml-auto flex-shrink-0"></i>
+                                        </a>
+                                    </li>
+                                    <!-- To add more certificate programs, copy the <li>...</li> block above and update the href and program name -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Labs -->
+                <div class="mb-12">
+                    <h3 class="text-3xl font-bold text-primary-800 mb-8 text-center">The Labs</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-2xl transition">
+                            <div class="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-chart-line text-3xl text-white"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-primary-900 mb-3">Finance Lab</h4>
+                            <p class="text-gray-600">Real-time trading terminals</p>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-2xl transition">
+                            <div class="w-20 h-20 bg-accent-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-bolt text-3xl text-white"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-primary-900 mb-3">High-Frequency Trading Lab</h4>
+                            <p class="text-gray-600">Low-latency strategy testing</p>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-2xl transition">
+                            <div class="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-university text-3xl text-white"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-primary-900 mb-3">Bank Lab</h4>
+                            <p class="text-gray-600">Credit risk and service innovation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Areas of Research -->
+                <div class="mb-12">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <button class="w-full program-toggle px-8 py-6 bg-gradient-to-r from-primary-700 to-primary-600 text-white text-left flex justify-between items-center hover:from-primary-600 hover:to-primary-500 transition" data-program="research">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Areas of Research</h3>
+                                <p class="text-purple-200">Click to view research agenda</p>
+                            </div>
+                            <i class="fas fa-chevron-down text-2xl transform transition-transform"></i>
+                        </button>
+                        <div class="program-detail" id="research-detail">
+                            <div class="p-4 sm:p-6 md:p-8">
+                                <p class="text-gray-700 mb-4 sm:mb-6 leading-relaxed font-semibold text-sm sm:text-base">
+                                    The research agenda of the Centre includes the following among others:
+                                </p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                                    <div class="space-y-3 sm:space-y-4">
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">1</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Financing of SMEs</p>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">2</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Regulatory Framework for Microfinance Institutions (MFIs)</p>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">3</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Need for and Success of Sector-Specific Financial Institutions such as SIDBI, NABARD, Post Office Savings Bank, etc.</p>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">4</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Innovation versus Regulation in Financial Markets</p>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">5</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Issues in regulation of banks, other financial institutions, and markets</p>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">6</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Disruptive Technologies in Banking and Financial Markets, and the Lessons for Regulation</p>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">7</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Sophisticated Models for Pricing of Derivatives</p>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">8</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Algorithmic Finance – Algorithmic trading, AI/ML, optimal trading strategies, etc.</p>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">15</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Fintech, Crypto assets, Digital Finance</p>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-3 sm:space-y-4">
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">9</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Continuous Time Finance (CTF) – Applications of Deep Learning to CTF</p>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">10</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Market Microstructure – Intra-day market modelling, impact of algorithmic trading on market stability and liquidity</p>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">11</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Financial Stability and Systemic Risk – network models, contagion in financial markets, systemic risks in banking systems</p>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">12</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Computational Finance – Monte-Carlo Methods, Martingale Methods, Portfolio Optimization, Credit Risk Modelling, Order Book Modelling</p>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">13</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Use of AI/ML to predict asset prices, volatility, credit scoring models, fund management, insurance</p>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">14</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">Performance of AI powered mutual funds, use of AI/ML to improve the performance of hedge funds, Fraud detection and security of financial transactions</p>
+                                        </div>
+                                        
+                                        <div class="flex items-start">
+                                            <span class="bg-accent-500 text-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 font-bold text-sm">16</span>
+                                            <p class="text-gray-700 pt-1 text-sm sm:text-base">LLMs in Finance</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center">
+                    <!-- <div class="inline-block bg-accent-500 text-primary-900 px-6 py-3 rounded-full text-lg font-bold mb-4">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        Launching in Early 2026
+                    </div> -->
+                    <br>
+                    <a href="#contact" class="cta-button inline-block bg-primary-700 text-white px-10 py-4 rounded-lg font-semibold hover:bg-primary-600 transition">
+                        <i class="fas fa-graduation-cap mr-2"></i>
+                        Elevate Your Career
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-animate">
+                <div class="text-center mb-16">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary-600 to-primary-800 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-briefcase text-3xl text-white"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-primary-900 mb-4">Careers</h2>
+                    <div class="w-24 h-1 bg-accent-500 mx-auto mb-4"></div>
+                    <p class="text-gray-600 text-lg">Join our world-class team</p>
+                </div>
+
+                <!-- Professor Positions -->
+                <div class="mb-12">
+                    <h3 class="text-3xl font-bold text-primary-800 mb-8 text-center">Faculty Positions</h3>
+
+                    <div class="space-y-6">
+                        <!-- Assistant Professor -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden border-l-4 border-primary-600">
+                            <button class="w-full program-toggle px-8 py-6 bg-gray-50 text-left flex justify-between items-center hover:bg-gray-100 transition" data-program="asst-prof">
+                                <div>
+                                    <h4 class="text-2xl font-bold text-primary-900 mb-1">Assistant Professor Grade I & II</h4>
+                                    <p class="text-gray-600">Click to view eligibility and requirements</p>
+                                </div>
+                                <i class="fas fa-chevron-down text-2xl text-primary-700 transform transition-transform"></i>
+                            </button>
+                            <div class="program-detail" id="asst-prof-detail">
+                                <div class="p-8 bg-gray-50">
+                                    <div class="mb-6">
+                                        <h5 class="text-lg font-bold text-primary-800 mb-3">Educational Qualifications</h5>
+                                        <p class="text-gray-700 leading-relaxed">
+                                            Ph.D. with a first class or equivalent (at least 60% marks or 6.5 CPI on a scale of 10) at the preceding degree level in Financial Markets, Financial Economics, Finance, Banking, Insurance, Financial Analytics, Fintech, Application of AI/ML in Finance, etc.
+                                        </p>
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <h5 class="text-lg font-bold text-primary-800 mb-3">Experience</h5>
+                                        <p class="text-gray-700 leading-relaxed mb-3">
+                                            <strong>Grade I:</strong> Minimum of three years post-Ph.D. teaching/research/professional experience of which at least one year should be post-doctoral research and/or teaching experience in a University/College/an Institute/industry.
+                                        </p>
+                                        <p class="text-gray-700 leading-relaxed">
+                                            <strong>Grade II:</strong> Candidates with less than three years post-doctoral experience.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h5 class="text-lg font-bold text-primary-800 mb-3">Publications</h5>
+                                        <p class="text-gray-700 leading-relaxed">
+                                            Minimum of 3 papers in reputed journals, with at least 1 in B or higher-level journals as per ABDC ranking list or ABS level 2+ or equivalent.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Associate Professor -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden border-l-4 border-accent-500">
+                            <button class="w-full program-toggle px-8 py-6 bg-gray-50 text-left flex justify-between items-center hover:bg-gray-100 transition" data-program="assoc-prof">
+                                <div>
+                                    <h4 class="text-2xl font-bold text-primary-900 mb-1">Associate Professor</h4>
+                                    <p class="text-gray-600">Click to view eligibility and requirements</p>
+                                </div>
+                                <i class="fas fa-chevron-down text-2xl text-primary-700 transform transition-transform"></i>
+                            </button>
+                            <div class="program-detail" id="assoc-prof-detail">
+                                <div class="p-8 bg-gray-50">
+                                    <div class="mb-6">
+                                        <h5 class="text-lg font-bold text-primary-800 mb-3">Educational Qualifications</h5>
+                                        <p class="text-gray-700 leading-relaxed">
+                                            Ph.D. with a first class or equivalent (at least 60% marks or 6.5 CPI on a scale of 10) at the preceding degree level in Financial Markets, Financial Economics, Finance, Banking, Insurance, Financial Analytics, Fintech, Application of AI/ML in Finance, etc.
+                                        </p>
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <h5 class="text-lg font-bold text-primary-800 mb-3">Experience</h5>
+                                        <p class="text-gray-700 leading-relaxed">
+                                            Minimum of 6 years post-Ph.D. teaching/research/professional experience, with at least 3 years at Assistant Professor Grade I level or equivalent.
+                                        </p>
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <h5 class="text-lg font-bold text-primary-800 mb-3">Publications</h5>
+                                        <p class="text-gray-700 leading-relaxed">
+                                            Minimum of 8 papers in reputed journals, with at least 4 in B or higher-level journals as per ABDC ranking list or ABS level 2+ or equivalent.
+                                        </p>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class="text-lg font-bold text-primary-800 mb-3">Teaching & Ph.D. Guidance</h5>
+                                        <p class="text-gray-700 leading-relaxed">
+                                            Should have taught MBA/Masters level courses and supervised at least one Ph.D. student.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Professor -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden border-l-4 border-primary-600">
+                            <button class="w-full program-toggle px-8 py-6 bg-gray-50 text-left flex justify-between items-center hover:bg-gray-100 transition" data-program="prof">
+                                <div>
+                                    <h4 class="text-2xl font-bold text-primary-900 mb-1">Professor</h4>
+                                    <p class="text-gray-600">Click to view eligibility and requirements</p>
+                                </div>
+                                <i class="fas fa-chevron-down text-2xl text-primary-700 transform transition-transform"></i>
+                            </button>
+                            <div class="program-detail" id="prof-detail">
+                                <div class="p-8 bg-gray-50">
+                                    <div class="mb-6">
+                                        <h5 class="text-lg font-bold text-primary-800 mb-3">Educational Qualifications</h5>
+                                        <p class="text-gray-700 leading-relaxed">
+                                            Ph.D. with a first class or equivalent (at least 60% marks or 6.5 CPI on a scale of 10) at the preceding degree level in Financial Markets, Financial Economics, Finance, Banking, Insurance, Financial Analytics, Fintech, Application of AI/ML in Finance, etc.
+                                        </p>
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <h5 class="text-lg font-bold text-primary-800 mb-3">Experience</h5>
+                                        <p class="text-gray-700 leading-relaxed">
+                                            Minimum of 10 years post-Ph.D. teaching/research/professional experience, with at least 4 years at Associate Professor level or equivalent.
+                                        </p>
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <h5 class="text-lg font-bold text-primary-800 mb-3">Publications</h5>
+                                        <p class="text-gray-700 leading-relaxed">
+                                            Minimum of 12 papers in reputed journals, with at least 6 in B or higher-level journals as per ABDC ranking list or ABS level 2+ or equivalent.
+                                        </p>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class="text-lg font-bold text-primary-800 mb-3">Ph.D. Guidance</h5>
+                                        <p class="text-gray-700 leading-relaxed">
+                                            Should have supervised at least two Ph.D. students who have graduated.
+                                        </p>
+                                    </div>
+
+                                    <!-- <div class="bg-accent-50 border-l-4 border-accent-500 p-6 rounded">
+                                        <h5 class="text-lg font-bold text-primary-800 mb-4">Desirable Criteria for Associate Professor and Professor</h5>
+                                        <ul class="list-disc ml-6 text-gray-700 space-y-2">
+                                            <li>Experience in a business school or reputed university</li>
+                                            <li>Publications in top-tier journals (A* or A level journals)</li>
+                                            <li>Evidence of securing research grants</li>
+                                            <li>International collaborations and visiting positions</li>
+                                            <li>Industry consulting experience</li>
+                                            <li>Awards and recognitions in the field</li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden border-l-4 border-accent-500">
+                            <button class="w-full program-toggle px-8 py-6 bg-gray-50 text-left flex justify-between items-center hover:bg-gray-100 transition" data-program="criteria">
+                                <div>
+                                    <h4 class="text-2xl font-bold text-primary-900 mb-1">Desirable Criteria</h4>
+                                    <p class="text-gray-600">Click to view details</p>
+                                </div>
+                                <i class="fas fa-chevron-down text-2xl text-primary-700 transform transition-transform"></i>
+                            </button>
+                            <div class="program-detail" id="criteria-detail">
+                                    <div class="bg-accent-50 p-6 rounded">
+                                        <h5 class="text-lg font-bold text-primary-800 mb-4">Desirable Criteria for Associate Professor and Professor</h5>
+                                        <ul class="list-disc ml-6 text-gray-700 space-y-2">
+                                            <li>Experience in a business school or reputed university</li>
+                                            <li>Publications in top-tier journals (A* or A level journals)</li>
+                                            <li>Evidence of securing research grants</li>
+                                            <li>International collaborations and visiting positions</li>
+                                            <li>Industry consulting experience</li>
+                                            <li>Awards and recognitions in the field</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+			
+		    <div class="text-center mt-8">
+                    	<a href="https://www.iitb.ac.in/job-vacancy-ad/rolling-advertisement-no-l-1025-26" target="_blank" class="cta-button inline-block bg-primary-700 text-white px-10 py-4 rounded-lg font-semibold hover:bg-primary-600 transition shadow-lg hover:shadow-xl">
+                        	<i class="fas fa-file-alt mr-2"></i>
+                        	Apply Now for Faculty Positions
+                    	</a>
+                   </div>
+                </div>
+
+                <!-- Staff Positions -->
+                <div class="mt-12">
+                    <h3 class="text-3xl font-bold text-primary-800 mb-8 text-center">Staff Positions</h3>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- Marketing, Communications and Events Manager -->
+                        <a href="https://portal.acr.iitbombay.org/job-listing/802155263562776330" target="_blank" class="bg-white rounded-xl shadow-lg overflow-hidden border-l-4 border-accent-500 hover:shadow-xl transition-shadow group">
+                            <div class="p-6">
+                                <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-accent-200 transition">
+                                    <i class="fas fa-bullhorn text-xl text-accent-600"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-primary-900 mb-2">Marketing and Events Manager</h4>
+                                <p class="text-primary-600 font-medium flex items-center">
+                                    Apply Now <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- Academic Projects Manager -->
+                        <a href="https://portal.acr.iitbombay.org/job-listing/802157412241796661" target="_blank" class="bg-white rounded-xl shadow-lg overflow-hidden border-l-4 border-primary-600 hover:shadow-xl transition-shadow group">
+                            <div class="p-6">
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary-200 transition">
+                                    <i class="fas fa-project-diagram text-xl text-primary-600"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-primary-900 mb-2">Academic Projects Manager</h4>
+                                <p class="text-primary-600 font-medium flex items-center">
+                                    Apply Now <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- Project and Operations Assistant -->
+                        <a href="https://portal.acr.iitbombay.org/job-listing/802142214701342455" target="_blank" class="bg-white rounded-xl shadow-lg overflow-hidden border-l-4 border-accent-500 hover:shadow-xl transition-shadow group">
+                            <div class="p-6">
+                                <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-accent-200 transition">
+                                    <i class="fas fa-tasks text-xl text-accent-600"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-primary-900 mb-2">Project and Operations Assistant</h4>
+                                <p class="text-primary-600 font-medium flex items-center">
+                                    Apply Now <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-animate">
+                <div class="text-center mb-12">
+                    <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg border-2 border-accent-500">
+                        <i class="fas fa-envelope text-3xl text-white"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+                    <div class="w-24 h-1 bg-accent-500 mx-auto"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Prof. S.V.D. Nageswara Rao -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl">
+                        <div class="h-64 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-600 flex items-center justify-center relative overflow-hidden">
+                            <div class="w-40 h-40 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-4 border-accent-500 relative z-10 shadow-2xl overflow-hidden">
+                                <img src="https://www.som.iitb.ac.in/wp-content/uploads/2025/08/svdnr-profile.jpeg" class="w-full h-full object-cover object-top rounded-full">
+                            </div>
+                        </div>
+
+                        <div class="p-8">
+                            <div class="text-center mb-6">
+                                <h3 class="text-2xl font-bold mb-2">Prof. S.V.D. Nageswara Rao</h3>
+                                <p class="text-purple-200 mb-1">Fellow (IIM, Ahmedabad)</p>
+                                <p class="text-purple-200 mb-1">Professor-in-Charge</p>
+                                <p class="text-purple-200 mb-1">Motilal Oswal Centre for Capital Markets</p>
+                                <p class="text-purple-200">Head, Shailesh J. Mehta School of Management</p>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div class="flex items-center bg-white/5 p-3 rounded-lg">
+                                    <i class="fas fa-map-marker-alt text-accent-500 mr-3"></i>
+                                    <p class="text-sm">IIT Bombay, Powai, Mumbai – 400076</p>
+                                </div>
+
+                                <div class="flex items-center bg-white/5 p-3 rounded-lg">
+                                    <i class="fas fa-envelope text-accent-500 mr-3"></i>
+                                    <a href="mailto:head.som@iitb.ac.in" class="text-sm hover:text-accent-400 transition">
+                                        head.som[at]iitb.ac.in
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Amit Chakarabarty -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl flex flex-col">
+                        <div class="h-64 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-600 flex items-center justify-center relative overflow-hidden">
+                            <div class="w-40 h-40 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-4 border-accent-500 relative z-10 shadow-2xl overflow-hidden">
+                                <img src="motilal_images/amitchakarabarty.jpeg" class="w-full h-full object-cover object-top rounded-full">
+                            </div>
+                        </div>
+
+                        <div class="p-8 flex flex-col flex-grow">
+                            <div class="text-center mb-6">
+                                <h3 class="text-2xl font-bold mb-2">Amit Chakarabarty</h3>
+                                <p class="text-purple-200 mb-1">Program Director</p>
+                                <p class="text-purple-200">Motilal Oswal Centre for Capital Markets</p>
+                            </div>
+
+                            <div class="space-y-3 mt-auto">
+                                <div class="flex items-center bg-white/5 p-3 rounded-lg">
+                                    <i class="fas fa-map-marker-alt text-accent-500 mr-3"></i>
+                                    <p class="text-sm">IIT Bombay, Powai, Mumbai – 400076</p>
+                                </div>
+
+                                <div class="flex items-center bg-white/5 p-3 rounded-lg">
+                                    <i class="fas fa-envelope text-accent-500 mr-3"></i>
+                                    <a href="mailto:program.director.moccm@iitb.ac.in" class="text-sm hover:text-accent-400 transition">
+                                        program.director.moccm[at]iitb.ac.in
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-950 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center">
+                <p class="text-purple-300 text-center">
+                    © 2025 Motilal Oswal Centre for Capital Markets, IIT Bombay. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Scripts -->
+    <script>
+        $(document).ready(function() {
+            // Mobile menu toggle
+            $('#mobile-menu-btn').click(function() {
+                $('#mobile-menu').slideToggle();
+            });
+
+            // Smooth scrolling
+            $('a[href^="#"]').on('click', function(e) {
+                e.preventDefault();
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 80
+                    }, 1000);
+                    $('#mobile-menu').slideUp();
+                }
+            });
+
+            // Active nav link
+            $(window).scroll(function() {
+                var scrollPos = $(document).scrollTop() + 100;
+
+                $('.nav-link').removeClass('active');
+
+                $('section').each(function() {
+                    var sectionTop = $(this).offset().top;
+                    var sectionBottom = sectionTop + $(this).outerHeight();
+                    var sectionId = $(this).attr('id');
+
+                    if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                        $('.nav-link[href="#' + sectionId + '"]').addClass('active');
+                    }
+                });
+            });
+
+            // Animate sections on scroll
+            function checkSections() {
+                $('.section-animate').each(function() {
+                    var elementTop = $(this).offset().top;
+                    var elementBottom = elementTop + $(this).outerHeight();
+                    var viewportTop = $(window).scrollTop();
+                    var viewportBottom = viewportTop + $(window).height();
+
+                    if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                        $(this).addClass('visible');
+                    }
+                });
+            }
+
+            $(window).on('scroll resize', checkSections);
+            checkSections();
+
+            // Initial animation for hero section
+            setTimeout(function() {
+                $('.section-animate').first().addClass('visible');
+            }, 200);
+
+            // Program toggle
+            $('.program-toggle').click(function() {
+                var program = $(this).data('program');
+                var detail = $('#' + program + '-detail');
+                var icon = $(this).find('i');
+
+                detail.toggleClass('open');
+                icon.toggleClass('fa-chevron-down fa-chevron-up');
+            });
+        });
+    </script>
+</body>

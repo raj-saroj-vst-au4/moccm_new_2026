@@ -1,0 +1,23 @@
+# MOCCM site — caching and directory listings
+
+# No auto-generated folder listings (this also stops bulkmailer/uploads from being browsable).
+Options -Indexes
+
+<IfModule mod_headers.c>
+  # Pages, styles, scripts and fonts: always check with the server before reusing a copy,
+  # so a page and the scripts it loads can never come from different versions of the site.
+  <FilesMatch "\.(html?|css|js|mjs|woff2?)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # Files requested with a ?v=<content hash> stamp (added by _src/build.py) change URL
+  # whenever their content changes, so they can be cached for a year.
+  <If "%{QUERY_STRING} =~ /(^|&)v=[0-9a-f]{8}($|&)/">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </If>
+
+  # Images change rarely: reuse for a day.
+  <FilesMatch "\.(png|jpe?g|webp|avif|svg|ico)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+</IfModule>
