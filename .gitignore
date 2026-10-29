@@ -1,0 +1,31 @@
+# Secrets / local config
+.env
+.env.*
+
+# Bulk mailer (SMTP credentials, recipient lists, vendor)
+bulkmailer/
+
+# Dependencies
+node_modules/
+
+# Claude Code
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs, temp and backup files
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
